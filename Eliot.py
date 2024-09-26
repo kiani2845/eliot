@@ -23,7 +23,8 @@ API_SECRET = 'your_api_secret'
 
 def analyze_wave(stock_name, analysis_type):
     f = open(f"data/{stock_name.lower()}_1d.csv", "w")
-  
+
+    global df
     #try:
     df = yf.download(tickers=stock_name, interval="1d", start=input("please enter the start date(y-m-d)"))
     # اضافه کردن ستون date
@@ -135,11 +136,13 @@ def neural_network_analysis(df):
     return predicted_price.flatten()  # بازگشت قیمت پیش‌بینی شده
 
 def save_analysis_to_html(stock_name, wave_results, neural_network_results):
+    global df
     with open('index.html', 'w', encoding='utf-8') as f:
         f.write('<html><head><title>تحلیل قیمت</title></head><body>')
         f.write(f'<h1>تحلیل قیمت سهام: {stock_name}</h1>')
         
         f.write('<h2>نتایج تحلیل امواج الیوت</h2>')
+        f.write(f'<img src="price_chart.png" alt="نمودار قیمت">')
         f.write('<ul>')
         for result in wave_results:
             f.write(f'<li>{result}</li>')
@@ -180,6 +183,7 @@ def plot_analysis(df):
     plt.legend()
 
     plt.tight_layout()
+    plt.savefig('price_chart.png')
     plt.show()
 
 def on_button_click():
