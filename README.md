@@ -1,3 +1,6 @@
+#Eliot V1.0 - Crypto Currency Signal Software(AI Software)
+
+
 Introducing Eliot v1.0 – the cutting-edge AI-powered cryptocurrency signal software designed to elevate your trading game! With advanced algorithms and real-time market analysis, Eliot provides you with accurate signals to maximize your profits and minimize risks. Join the revolution in crypto trading and unlock your potential today! Why Choose Eliot v1.0?
 
 AI-Driven Insights: Harness the power of artificial intelligence to analyze market trends and generate precise trading signals.
